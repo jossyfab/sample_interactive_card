@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cards-section">
+            <div class="cards">
+                <div class="front-card">
+                    <img src="card-logo.svg"
+                         alt="card logo"
+                         class="card-logo">
+
+                    <div class="card-container">
+                        <img src="bg-card-front.png"
+                         alt="card front" width="360px">
+                        <h4 id="number">OOOO OOOO OOOO OOOO</h4>
+                        <div class="card-info">
+                            <span id="name">Jane Appleseed</span>
+                            <span id="date">
+                                <span id="month">00</span>/
+                                <span id="year">00</span>
+                            </span>
+                        </div>
+                    </div>     
+                </div>
+                <div class="back-card">
+                    <img src="bg-card-back.png"
+                     alt="back card" width="360px">
+                    <span id="cvc">000</span>
+                </div>
+            </div>
+        </div>  
+        <div class="form-section">
+            <form>
+                <div class="block-1">
+                    <label for="input-name">
+                        Cardholder Name
+                    </label>
+                    <input type="text" 
+                    placeholder="e.g Jane Appleseed"
+                    id="input-name"
+                    required>
+                </div>
+                <div class="block-2">
+                   <label for="input-number">Card Number</label>
+                   <input type="number" placeholder="e.g 1234 5678 9123 0000"
+                    oninput="if(this.length > this.maxLength)this.value = this.value.slice(0,this.maxLenght)"
+                    maxlength="16"
+                    minlength="16"
+                    id="input-number"
+                    required>
+                </div>
+                <div class="block-3">
+                    <div class="date-block">
+                        <label for="date-block">Exp. Date (MM/YY)</label>
+                        <div class="two-boxes-input">
+                            <div>
+                                <input
+                                type="number"
+                                placeholder="MM"
+                                oninput="if(this.length > this.maxLength)this.value = this.value.slice(0,this.maxLenght)"
+                                minlength="2" maxlength="2" id="input-month"
+                                required>
+                            </div>
+                            <div>
+                                <input
+                                type="number"
+                                placeholder="YY"
+                                oninput="if(this.length > this.maxLength)this.value = this.value.slice(0,this.maxLenght)"
+                                minlength="2" maxlength="2" id="input-year"
+                                required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cvc-block">
+                        <label for="input-cvc">CVC</label>
+                        <input type="number"
+                        placeholder="e.g 123"
+                        oninput="if(this.length > this.maxLength)this.value = this.value.slice(0,this.maxLenght)"
+                        maxlength="3"
+                        id="input-cvc"
+                        required>
+                    </div>
+                </div>
+              
+                <button type="submit" id="submit-btn">Confirm</button>
+            </form>
+            <div class="thank-you hidden">
+                <img src="icon-complete.svg" 
+                alt="completed">
+                <h1>Thank you!</h1>
+                <p>we've added your card details</p>
+                <button>continue</button>
+            </div>
+
+        </div>
+    </div> 
+    
+    <script src="app.js"></script>
+</body>    
+</html>
